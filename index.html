@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoznam úloh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- main wrapper -->
+    <div class="container" role="main">
+        <header>
+            <h1>Zoznam úloh</h1>
+            <span class="task-counter" aria-live="polite">0 úloh</span>
+        </header>
+
+        <form id="todo-form" aria-label="Formulár novej úlohy">
+            <input type="text" id="todo-input" placeholder="Pridať novú úlohu..." aria-label="Pole pre novú úlohu">
+            <button type="submit" aria-label="Pridať">+</button>
+        </form>
+
+        <!-- filters -->
+        <div class="filters">
+            <button data-filter="all" class="active">Všetky</button>
+            <button data-filter="active">Aktívne</button>
+            <button data-filter="completed">Hotové</button>
+        </div>
+
+        <ul id="todo-list"></ul>
+    </div>
+
+    <!-- modals -->
+    <div class="modal" id="edit-modal" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <h2>Upraviť úlohu</h2>
+            <form id="edit-form">
+                <input type="text" id="edit-input">
+                <div class="modal-buttons">
+                    <button type="submit">Uložiť</button>
+                    <button type="button" id="cancel-edit">Zrušiť</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="delete-confirm-modal" aria-hidden="true" role="dialog">
+        <div class="modal-content">
+            <h2>Ste si istý?</h2>
+            <div class="modal-buttons">
+                <button id="confirm-delete">Áno, odstrániť</button>
+                <button id="cancel-delete">Nie, zrušiť</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

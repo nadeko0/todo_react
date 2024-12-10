@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #1a1a1a;
+  --bg-light: #242424;
+  --text: #fff;
+  --text-secondary: #a0a0a0;
+  --primary: #4a9eff;
+  --border: #333;
+  --danger: #ff4444;
+  --success: #00cc66;
+  --warning: #ffd700;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, system-ui, sans-serif;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.adding {
+  animation: slideIn 0.3s ease forwards;
+}
+
+.removing {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 0.3s ease;
+}
